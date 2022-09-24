@@ -6,7 +6,7 @@
 /*   By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:05:08 by egaliber          #+#    #+#             */
-/*   Updated: 2021/12/16 17:30:53 by egaliber         ###   ########.fr       */
+/*   Updated: 2022/09/24 14:46:34 by egaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 char	*ft_itoa(int n);
+char	*ft_itoa_signed(long long int n);
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -81,7 +82,11 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin_f1(char *s1, char *s2);
+char	*ft_strjoin_f2(char *s1, char *s2);
 
+long double	ft_power(int power, long double base);
+long double	ft_rounding(int i, long double num);
 int		ft_power_to(int nb, int power);
 void	ft_lst_addback(t_list **head, t_list *new);
 t_list	*ft_lstat(t_list *lst, int p);
