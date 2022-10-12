@@ -6,7 +6,7 @@
 #    By: egaliber <egaliber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/03 14:11:33 by elliotgalib       #+#    #+#              #
-#    Updated: 2022/09/24 14:44:28 by egaliber         ###   ########.fr        #
+#    Updated: 2022/10/06 19:58:39 by egaliber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,20 +80,27 @@ SRC = 	ft_atoi.c \
 		ft_lstat_extra.c \
 		ft_lstlast_extra.c \
 		ft_power_to_extra.c \
-		ft_lstsize_extra.c 
+		ft_lstsize_extra.c \
+		get_next_line.c \
 		
 OBJ = $(SRC:.c=.o)
+
+PRINTF_LIB = ft_printf/libftprintf.a
 
 all: $(NAME)
 
 $(NAME):
 	@gcc -Wall -Wextra -Werror -c $(SRC)
 	@ar rc $(NAME) $(OBJ)
+	@make -C ft_printf
+	@cp $(PRINTF_LIB) $(NAME)
 
 clean:
 	@rm -f $(OBJ)
+	@make -C ft_printf clean
 
 fclean: clean
 	@rm -f $(NAME)
+	@make -C ft_printf fclean
 
 re: fclean all
